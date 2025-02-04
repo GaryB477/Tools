@@ -2,3 +2,11 @@
 zig/hello_world/test_main.zig~
 
 *.*~
+
+c#/HelloWorld.App/bin/
+
+c#/HelloWorld.App/HelloWorld.Test/bin/
+
+c#/HelloWorld.App/HelloWorld.Test/obj/
+
+c#/HelloWorld.App/obj/
