@@ -18,4 +18,8 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HelloWorld.App.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,8 @@
-﻿namespace HelloWorld.Test;
+﻿using System;
+using HelloWorld.App;
 
-public class Tests
+namespace HelloWorld.Test;
+public class Tests : Program
 {
     [SetUp]
     public void Setup()
@@ -8,8 +10,26 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void Test_Empty()
     {
-        Assert.Pass();
+        Assert.That(Program.Process([]), Is.EqualTo("Got empty input"));
+    }
+
+    [Test]
+    public void Test_Invalid()
+    {
+        Assert.That(Program.Process(["-t", "Test", "Test"]), Is.EqualTo("Got non-matching input"));
+    }
+
+    [Test]
+    public void Test_UpperCase()
+    {
+        Assert.That(Program.Process(["-u", "Test"]), Is.EqualTo("TEST"));
+    }
+
+    [Test]
+    public void Test_LowerCase()
+    {
+        Assert.That(Program.Process(["-l", "TeSt"]), Is.EqualTo("test"));
     }
 }
